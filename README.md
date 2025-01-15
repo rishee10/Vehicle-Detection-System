@@ -4,26 +4,28 @@ Hi guys, This repository consist of a source code of script to detect cars in a 
 
 The ML algorithms used for detecting cars and bounding boxes coordinates is a pretrained cascade model Haarcascade car
 
-Getting started
+# Getting started
 Firstly we have to clone the project repository or download the zip of project and then extract it.
 
 git 
-cd Vehicle Dection Python
-Vehicle Dection Python ->
-Dependencies
+cd Vehicle Detection Python
+Vehicle Detection Python ->
+
+# Dependencies
 Now once we have the project repo in our local directory, now lets install the dependecies required to run our script
 
 pip install opencv-python
+
 Sample video
 The sample video we used in this project is [cars.mp4] which will come as you download or clone the repository, to load a different video with different filename, you might wanna change the source code a bit.
 
-def Simulator():
-    CarVideo = cv2.VideoCapture('cars.mp4') # change cars.mp4 to name of your vidoe
+```def Simulator():
+    CarVideo = cv2.VideoCapture('cars.mp4')
     while CarVideo.isOpened():
         ret, frame = CarVideo.read()
         controlkey = cv2.waitKey(1)
         if ret:        
-            cars_frame = detect_cars(frame)
+            cars_frame = detect_cars_and_pedestrain(frame)
             cv2.imshow('frame', cars_frame)
         else:
             break
@@ -31,4 +33,6 @@ def Simulator():
             break
 
     CarVideo.release()
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows()```
+        
+
